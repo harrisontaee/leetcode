@@ -1,4 +1,7 @@
-export const binarySearch = (nums: number[], target: number): number => {
+/**
+ * @link https://leetcode.com/problems/binary-search/
+ */
+export function binarySearch(nums: number[], target: number): number {
 	let left = 0, right = nums.length - 1;
 
 	while (left <= right) {

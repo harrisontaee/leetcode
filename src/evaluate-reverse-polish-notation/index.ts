@@ -1,7 +1,4 @@
-const Ops = new Set(['+', '-', '*', '/']);
-
-
-export const evaluateReversePolishNotation = (tokens: string[]): number => {
+export function evalRPN (tokens: string[]): number {
 	const stack: number[] = [];
 
 	for (let token of tokens) {
