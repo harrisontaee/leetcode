@@ -1,33 +1,26 @@
-export const longestRepeatingCharacterReplacement = (s: string, k: number): number => {
-	if (k >= s.length) return s.length;
-
-
+/**
+ * @link https://leetcode.com/problems/longest-repeating-character-replacement/
+ */
+export const characterReplacement = (s: string, k: number): number => {
 	const counts: {[char: string]: number} = {};
-	const getMaxCount = () => {
-		let count = 0;
-		for (let char in counts) {
-			if (counts[char] > count) {
-				count = counts[char];
-			};
-		};
-		return count;
-	};
+	let maxCount = 0, maxLength = 0;
 
+	for (let l = 0, r = 0; r < s.length; r++) {
+		const right = s[r];
 
-	let left = 0, width = 0;
-	while (left + width <= s.length) {
-		const toAdd = s[left + width];
-		if (toAdd in counts) counts[toAdd]++;
-		else counts[toAdd] = 1;
+		if (right in counts) counts[right]++;
+		else counts[right] = 1;
 
-		if (width - getMaxCount() > k) {
-			const toRemove = s[left];
-			if (counts[toRemove] === 1) delete counts[toRemove];
-			else counts[toRemove]--;
-			left++;
-		} else width++;
-	};
+		maxCount = Math.max(maxCount, counts[right]); 
 
+		while (r - l + 1 - maxCount > k) {
+			const left = s[l];
+			counts[left]--;
+			l++;
+		}
 
-	return width - 1;
+		maxLength = Math.max(maxLength, r - l + 1);
+	}
+
+	return maxLength;
 };

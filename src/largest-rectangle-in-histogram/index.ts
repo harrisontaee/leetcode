@@ -1,22 +1,34 @@
-export const largestRectangleInHistogram = (heights: number[]): number => {
-	let area = 0;
-	let stairs: [number, number][] = []; // [start, height]
+/**
+ * @link https://leetcode.com/problems/largest-rectangle-in-histogram/
+ */
+export const largestRectangleArea = (heights: number[]): number => {
+	const stack: number[] = [];
+	let maxArea: number = 0;
 
-	for (let i = 0; i < heights.length; i++) {
-		let [start, height] = [i, heights[i]];
-
-		while (stairs.length && height < stairs[stairs.length - 1][1]) {
-			const [prevStart, prevHeight] = stairs.pop() || [0, 0];
-			area = Math.max(area, prevHeight * (i - prevStart));
-			start = prevStart;
+	for (let i = 0; i < heights.length; i += 1) {
+		if (!stack.length || heights[i] > heights[i - 1]) {
+			stack.push(i);
+			continue;
+		} else if (heights[i] === heights[i - 1]) {
+			stack[stack.length - 1] = i;
+			continue;
 		};
 
-		stairs.push([start, height]);
-	};
+		while (!!stack.length && heights[stack[stack.length - 1]] > heights[i]) {
+			// @ts-ignore
+			const height: number = heights[stack.pop()];
+			const width: number = !stack.length ? i : i - (stack[stack.length - 1] + 1);
+			maxArea = Math.max(maxArea, height * width);
+		};
+		stack.push(i);
+	}
 
-	for (let [start, height] of stairs) {
-		area = Math.max(area, height * (heights.length - start));
-	};
-	
-	return area;
+	while (!!stack.length) {
+		// @ts-ignore
+		const value: number = heights[stack.pop()];
+		const width: number = !stack.length ? heights.length : heights.length - 1 - stack[stack.length - 1];
+		maxArea = Math.max(maxArea, value * width);
+	}
+
+	return maxArea;
 };

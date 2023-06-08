@@ -1,6 +1,4 @@
 /**
  * @link https://leetcode.com/problems/contains-duplicate/
  */
-export function containsDuplicate (nums: number[]): boolean {
-	return nums.length !== new Set(nums).size; // O(n)
-};
+export const containsDuplicate = (nums: number[]): boolean => nums.length !== new Set(nums).size;

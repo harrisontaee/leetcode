@@ -1,4 +1,8 @@
-export function evalRPN (tokens: string[]): number {
+/**
+ * @link https://leetcode.com/problems/evaluate-reverse-polish-notation/
+ */
+
+export const evalRPN = (tokens: string[]): number => {
 	const stack: number[] = [];
 
 	for (let token of tokens) {

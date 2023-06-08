@@ -1,22 +1,15 @@
 /**
  * @link https://leetcode.com/problems/longest-consecutive-sequence/
  */
-export const longestConsecutiveSequence = (nums: number[]): number => { // O(n)
+export const longestConsecutive = (nums: number[]): number => {
 	const set = new Set(nums);
+	let longest = 0;
 
-	let longest = 1;
-	while (!!set.size) { // O(n)
-		let [cur] = set;
-		set.delete(cur);
-
-		let prev = cur - 1;
-		while (set.has(prev)) set.delete(prev--);
-
-		let next = cur + 1;
-		while (set.has(next)) set.delete(next++);
-
-		const count = next - prev - 1;
-		if (count > longest) longest = count;
+	for (let num of set) {
+		if (set.has(num - 1)) continue;
+		let curr = num;
+		while (set.has(curr + 1)) curr++;
+		longest = Math.max(longest, curr - num + 1);
 	};
 
 	return longest;

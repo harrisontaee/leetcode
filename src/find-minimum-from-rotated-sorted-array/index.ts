@@ -1,12 +1,15 @@
-export const findMinimumFromRotatedSortedArray = (nums: number[]): number => {
+/**
+ * @link https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+ */
+export const findMin = (nums: number[]): number => {
 	let left = 0, right = nums.length -1;
 
-	while (right - left > 1) {
+	while (left < right) {
 		const mid = Math.floor((left + right) / 2);
 
-		if (nums[mid] > nums[left]) left = mid + 1;
-		else right = mid - 1;
+		if (nums[mid] > nums[right]) left = mid + 1;
+		else right = mid;
 	};
 
-	return right + 1 < nums.length ? nums[right + 1] : nums[0];
+	return nums[left];
 };

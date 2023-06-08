@@ -1,4 +1,7 @@
-export const generateParentheses = (n: number): string[] => {
+/**
+ * @link https://leetcode.com/problems/generate-parentheses/
+ */
+export const generateParenthesis = (n: number): string[] => {
 	const parentheses: string[] = [];
 	const current: string[] = [];
 

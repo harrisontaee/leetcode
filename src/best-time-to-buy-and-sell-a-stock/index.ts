@@ -1,14 +1,16 @@
 /**
  * @link https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  */
-export function maxProfit(prices: number[]): number {
-	let profit = 0;
-	let min = Infinity;
+export const maxProfit = (prices: number[]): number => {
+	let maxProfit = 0, left = 0, right = 1;
 
-	for (let price of prices) {
-		if (price - min > profit) profit = price - min;
-		if (price < min) min = price;
+	while (right < prices.length) {
+		let profit = prices[right] - prices[left];
+		maxProfit = Math.max(maxProfit, profit);
+
+		if (prices[right] < prices[left]) left = right;
+		right++;
 	};
 
-	return profit;
+	return maxProfit;
 };

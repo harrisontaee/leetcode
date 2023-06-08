@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/daily-temperatures/
  */
-export function dailyTemperatures(temperatures: number[]): number[] {
+export const dailyTemperatures = (temperatures: number[]): number[] => {
 	const result: number[] = Array(temperatures.length).fill(0);
 	const decreasing: number[] = [];
 

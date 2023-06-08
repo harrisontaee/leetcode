@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/car-fleet/
  */
-export function carFleet(target: number, position: number[], speed: number[]): number {
+export const carFleet = (target: number, position: number[], speed: number[]): number => {
 	let fleets = 0;
 	let minTime = -Infinity;
 
