@@ -12,12 +12,7 @@ export const lengthOfLongestSubstring = (s: string): number => {
 
 		map.set(right, r);
 		max = Math.max(max, r - l + 1);
-
-		console.log(l, r, max, map);
 	};
 
 	return max;
 };
-
-
-console.log(lengthOfLongestSubstring("dvdf"));

@@ -7,8 +7,10 @@ const findMedianOfArray = (nums: number[]): number => {
 
 
 
-
-export const findMedianOfTwoSortedArrays = (nums1: number[], nums2: number[]): number => {
+/**
+ * @link https://leetcode.com/problems/median-of-two-sorted-arrays/
+ */
+export const findMedianSortedArrays = (nums1: number[], nums2: number[]): number => {
 	const
 		length1 = nums1.length,
 		length2 = nums2.length,
