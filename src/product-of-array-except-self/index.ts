@@ -1,8 +1,8 @@
 /**
- * @link https://leetcode.com/problems/product-of-arry-except-self
+ * @link https://leetcode.com/problems/product-of-array-except-self/
  */
-export const productOfArrayExceptSelf = (nums: number[]): number[] => { // O(n)
-	const answer = [];
+const productExceptSelf = (nums: number[]): number[] => { // O(n)
+	const answer: number[] = [];
 
 	let forwards = 1;
 	for (let f = 0; f < nums.length; f++) { // O(n)

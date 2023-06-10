@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/longest-consecutive-sequence/
  */
-export const longestConsecutive = (nums: number[]): number => {
+const longestConsecutive = (nums: number[]): number => {
 	const set = new Set(nums);
 	let longest = 0;
 

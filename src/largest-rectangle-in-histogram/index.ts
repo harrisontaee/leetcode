@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/largest-rectangle-in-histogram/
  */
-export const largestRectangleArea = (heights: number[]): number => {
+const largestRectangleArea = (heights: number[]): number => {
 	const stack: number[] = [];
 	let maxArea: number = 0;
 

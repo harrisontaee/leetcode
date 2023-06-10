@@ -1,4 +1,7 @@
-export const matrixSearch = (matrix: number[][], target: number): boolean => {
+/**
+ * @link https://leetcode.com/problems/search-a-2d-matrix/
+ */
+const searchMatrix = (matrix: number[][], target: number): boolean => {
 	let left = 0, right = matrix.length - 1, row: number[] = [];
 
 	while (left <= right) {
@@ -7,13 +10,9 @@ export const matrixSearch = (matrix: number[][], target: number): boolean => {
 
 		if (row[0] === target) return true;
 		if (row[row.length - 1] === target) return true;
-		if (row[0] > target) {
-			right = mid - 1;
-			continue;
-		} else if (row[row.length - 1] < target) {
-			left = mid + 1;
-			continue;
-		} else break;
+		if (row[0] > target) right = mid - 1;
+		else if (row[row.length - 1] < target) left = mid + 1;
+		else break;
 	};
 
 	left = 1; right = row.length - 2;

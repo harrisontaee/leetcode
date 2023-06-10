@@ -74,4 +74,4 @@ class Stack {
  * @link https://leetcode.com/problems/min-stack/
  */
 
-export class MinStack extends Stack {};
+class MinStack extends Stack {};

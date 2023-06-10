@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  */
-export const maxProfit = (prices: number[]): number => {
+const maxProfit = (prices: number[]): number => {
 	let maxProfit = 0, left = 0, right = 1;
 
 	while (right < prices.length) {

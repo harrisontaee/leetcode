@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/longest-repeating-character-replacement/
  */
-export const characterReplacement = (s: string, k: number): number => {
+const characterReplacement = (s: string, k: number): number => {
 	const counts: {[char: string]: number} = {};
 	let maxCount = 0, maxLength = 0;
 

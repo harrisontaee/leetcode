@@ -6,7 +6,7 @@ const hex = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D
 /**
  * @link https://leetcode.com/problems/encode-and-decode-strings/
  */
-export const encode = (strs: string[]): string => {
+const encode = (strs: string[]): string => {
 	let code = "";
 	for (let str of strs) {
 		for (let char of str) {
@@ -26,7 +26,7 @@ export const encode = (strs: string[]): string => {
 /**
  * @link https://leetcode.com/problems/encode-and-decode-strings/
  */
-export const decode = (s: string): string[] => {
+const decode = (s: string): string[] => {
 	const words: string[] = [];
 	const strs = s.split("#");
 	for (let str of strs) {

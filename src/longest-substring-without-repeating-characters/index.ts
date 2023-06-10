@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/longest-substring-without-repeating-characters/
  */
-export const lengthOfLongestSubstring = (s: string): number => {
+const lengthOfLongestSubstring = (s: string): number => {
 	let max = 0;
 	const map = new Map<string, number>();
 

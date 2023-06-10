@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/minimum-window-substring/
  */
-export const minWindow = (s: string, t: string): string => {
+const minWindow = (s: string, t: string): string => {
 	if (t.length > s.length) return "";
 
 

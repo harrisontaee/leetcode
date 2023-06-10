@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/container-with-most-water/
  */
-export const maxArea = (height: number[]): number => {
+const maxArea = (height: number[]): number => {
 	let l = 0, r = height.length - 1, max = 0;
 
 	while (l < r) {

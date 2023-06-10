@@ -1,7 +1,7 @@
 /**
  * @link https://leetcode.com/problems/koko-eating-bananas/
  */
-export const minEatingSpeed = (piles: number[], h: number): number => {
+const minEatingSpeed = (piles: number[], h: number): number => {
 	let left = 1, right = Math.max(...piles);
 
 	while (left < right) {
