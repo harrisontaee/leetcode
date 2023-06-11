@@ -1,4 +1,7 @@
-export const slidingWindowMaximum = (nums: number[], k: number): number[] => {
+/**
+ * @link https://leetcode.com/problems/sliding-window-maximum/
+ */
+const slidingWindowMaximum = (nums: number[], k: number): number[] => {
 	const maxes: number[] = [];
 	const queue: number[] = [];
 

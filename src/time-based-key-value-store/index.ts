@@ -1,4 +1,7 @@
-export class TimeMap {
+/**
+ * @link https://leetcode.com/problems/time-based-key-value-store/
+ */
+class TimeMap {
 	map: {[key: string]: [number, string][]}
 
 

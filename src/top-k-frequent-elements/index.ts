@@ -1,16 +1,18 @@
 /**
  * @link https://leetcode.com/problems/top-k-frequent-elements
  */
-export const topKFrequentElements = (nums: number[], k: number): number[] => {
-	let freqs = {};
+const topKFrequent = (nums: number[], k: number): number[] => {
+	let freqs: {[num: number]: number} = {};
 	for (let num of nums) freqs[num] = (freqs[num] || 0) + 1;
-	let array = [];
+
+	let array: number[][] = [];
 	for (let num in freqs) {
 		let freq = freqs[num];
-		array[freq] = (array[freq] || new Set()).add(num);
+		if (array[freq]) array[freq].push(parseInt(num));
+		else array[freq] = [parseInt(num)];
 	};
 
-	let result = [];
+	let result: number[] = [];
 	for (let i = array.length - 1; i >= 0; i--) {
 		if (!array[i]) continue;
 		result.push(...array[i]);

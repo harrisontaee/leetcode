@@ -1,9 +1,9 @@
 /**
  * @link https://leetcode.com/problems/3sum/
  */
-export const threeSum = (nums: number[]): number[][] => {
+const threeSum = (nums: number[]): number[][] => {
 	nums.sort((a, b) => a - b);
-	const result = [];
+	const result: number[][] = [];
 
 	for (let i = 0; i < nums.length; i++) {
 		if (nums[i] > 0) break;

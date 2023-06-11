@@ -1,10 +1,10 @@
 /**
  * @link https://leetcode.com/problems/valid-sudoku/
  */
-export const isValidSudoku = (board: string[][]): boolean => { // O(n)
-	const rows = [];
-	const cols = [];
-	const boxs = [];
+const isValidSudoku = (board: string[][]): boolean => { // O(n)
+	const rows: Set<string>[] = [];
+	const cols: Set<string>[] = [];
+	const boxs: Set<string>[] = [];
 
 	for (let row = 0; row < board.length; row++) {
 		if (!rows[row]) rows[row] = new Set();
