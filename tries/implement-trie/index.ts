@@ -11,6 +11,9 @@ class TrieNode {
 
 
 
+/**
+ * @link https://leetcode.com/problems/implement-trie-prefix-tree/
+ */
 class Trie {
     root: TrieNode;
     constructor() {
