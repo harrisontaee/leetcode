@@ -11,7 +11,6 @@ class KthLargest {
 	};
 
 	
-
 	swap = (i: number, j: number) => ([this.heap[i], this.heap[j]] = [this.heap[j], this.heap[i]]);
 	add = (val: number): number => {
 		if (this.heap.length === this.k && this.heap[0] > val) return this.heap[0];
@@ -24,7 +23,6 @@ class KthLargest {
 			this.swap(parent, child);
 			child = parent;
 		};
-
 
 		while (this.heap.length > this.k) {
 			if (this.heap.length === 1) return this.heap[0];
@@ -44,7 +42,6 @@ class KthLargest {
 			};
 		};
 
-		
 		return this.heap[0];
 	};
 }

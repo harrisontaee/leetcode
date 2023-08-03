@@ -28,7 +28,7 @@ class MaxHeap {
 			if (this.heap[parent] >= this.heap[child]) break;
 			this.swap(parent, child);
 			child = parent;
-		}
+		};
 	};
 
 
