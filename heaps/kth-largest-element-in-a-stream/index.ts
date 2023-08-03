@@ -1,3 +1,6 @@
+/**
+ * @link https://leetcode.com/problems/kth-largest-element-in-a-stream/
+ */
 class KthLargest {
 	heap: number[];
 	k: number;
@@ -33,10 +36,7 @@ class KthLargest {
 				if (left >= this.heap.length) break;
 
 				const right = left + 1;
-				child =
-					right >= this.heap.length || this.heap[left] < this.heap[right]
-						? left
-						: right;
+				child = right >= this.heap.length || this.heap[left] < this.heap[right] ? left : right;
 
 				if (this.heap[parent] <= this.heap[child]) break;
 				this.swap(parent, child);
