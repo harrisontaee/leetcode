@@ -9,5 +9,5 @@ Solutions to miscellaneous leetcode problems. Kudos to [Neetcode](https://neetco
 - [Sliding Window](sliding-window)
 - [Linked Lists](linked-lists)
 - [Trees](trees)
-- [Heaps](heaps)
+- [Heaps and Priority Queues](heaps-and-priority-queues)
 - [Backtracking](backtracking)
