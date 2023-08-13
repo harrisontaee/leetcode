@@ -5,7 +5,7 @@ const combinationSum = (candidates: number[], target: number): number[][] => {
 	const result: number[][] = [];
 
 
-	const dfs = (subset: number[], sum: number, index: number) => {
+	const backtrack = (subset: number[] = [], sum: number = 0, index: number = 0) => {
 		if (sum >= target) {
 			if (sum === target) result.push(subset);
 			return;
@@ -13,11 +13,11 @@ const combinationSum = (candidates: number[], target: number): number[][] => {
 
 		for (let i = index; i < candidates.length; i++) {
 			const candidate = candidates[i];
-			dfs([...subset, candidate], sum + candidate, i);
+			backtrack([...subset, candidate], sum + candidate, i);
 		};
 	};
 
 	
-	dfs([], 0, 0);
+	backtrack();
 	return result;
 };
