@@ -1,3 +1,6 @@
+/**
+ * @link https://leetcode.com/problems/surrounded-regions/
+ */
 const solve = (board: string[][]): void => {
 	const rows = board.length;
 	const cols = board[0].length;

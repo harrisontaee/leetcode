@@ -1,3 +1,6 @@
+/**
+ * @link https://leetcode.com/problems/redundant-connection/
+ */
 const findRedundantConnection = (edges: number[][]): number[] => {
 	const roots: number[] = Array.from({length: edges.length + 1}, (_, index) => index);
 
